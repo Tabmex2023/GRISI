@@ -1,0 +1,248 @@
+/* --- CSS RESET & VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #F9EBE6;        /* Exakter Beige-Rosa Hintergrund deines Logos */
+    --text-color: #000000;      /* Tiefschwarz */
+    --white: #FFFFFF;
+    --whatsapp-green: #25D366;  /* WhatsApp Farbe für den CTA */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 40px; /* Platz wegen schwebendem Button */
+}
+
+/* --- HEADER --- */
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 20px 20px;
+    background-color: var(--bg-color);
+}
+
+.logo-container {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.brand-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    text-align: center;
+    padding: 10px 20px 40px 20px;
+}
+
+.slogan {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* --- SECTIONS GENERAL --- */
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- PRODUCTS GRID --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.product-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.product-desc {
+    font-size: 1rem;
+    color: #333333;
+}
+
+.coming-soon {
+    opacity: 0.6;
+    border-style: dashed;
+}
+
+/* --- STORY SECTION --- */
+.story-section {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.story-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-text {
+    font-size: 1.15rem;
+    margin-bottom: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.tagline {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.4rem;
+    margin-top: 35px;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 1.05rem;
+}
+
+.main-footer p {
+    margin-bottom: 10px;
+}
+
+.location i, .phone i {
+    margin-right: 8px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+
+/* --- FLOATING WHATSAPP BUTTON --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--whatsapp-green);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float i {
+    font-size: 1.6rem;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05);
+    background-color: #20ba5a;
+}
+
+/* --- RESPONSIVE OPTIMIZATIONS (MOBILTELEFON) --- */
+@media (max-width: 600px) {
+    .main-header {
+        padding: 20px 10px;
+    }
+    
+    .slogan {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+
+    .product-card {
+        padding: 30px 20px;
+    }
+
+    .story-text {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    /* Kompakterer Button auf Smartphones */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 16px;
+    }
+    
+    .whatsapp-float .cta-text {
+        display: none; /* Zeigt auf Mobilgeräten nur das Icon, um den Bildschirm zu schonen */
+    }
+    
+    .whatsapp-float {
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        justify-content: center;
+    }
+    
+    .whatsapp-float i {
+        font-size: 1.8rem;
+    }
+}
